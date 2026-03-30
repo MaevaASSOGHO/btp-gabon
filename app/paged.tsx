@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 interface Service {
   title: string;
   description: string;
+  icon: string;
   image: string;
 }
 
@@ -43,6 +44,7 @@ const SERVICES: Service[] = [
     title: "Génie Civil",
     description:
       "Conception et réalisation d'ouvrages d'art, fondations et structures béton armé.",
+    icon: "🏗",
     image:
       "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80",
   },
@@ -50,6 +52,7 @@ const SERVICES: Service[] = [
     title: "Bâtiment & Construction",
     description:
       "Construction neuve, réhabilitation et extension de bâtiments résidentiels et commerciaux.",
+    icon: "🏢",
     image:
       "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80",
   },
@@ -57,6 +60,7 @@ const SERVICES: Service[] = [
     title: "Routes & Infrastructures",
     description:
       "Création et réfection de voiries, pistes, parkings et infrastructures routières.",
+    icon: "🛣",
     image:
       "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=600&q=80",
   },
@@ -64,6 +68,7 @@ const SERVICES: Service[] = [
     title: "Aménagement Urbain",
     description:
       "Espaces publics, parcs, mobilier urbain et aménagements paysagers sur mesure.",
+    icon: "🌆",
     image:
       "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&q=80",
   },
@@ -71,6 +76,7 @@ const SERVICES: Service[] = [
     title: "Travaux Électriques",
     description:
       "Installations électriques HT/BT, éclairage public, tableaux de distribution.",
+    icon: "⚡",
     image:
       "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=600&q=80",
   },
@@ -78,6 +84,7 @@ const SERVICES: Service[] = [
     title: "Plomberie & Réseaux",
     description:
       "Réseaux d'eau potable, assainissement, adduction et travaux de canalisation.",
+    icon: "🔧",
     image:
       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
   },
@@ -139,11 +146,11 @@ function StatCard({ stat, animate }: { stat: Stat; animate: boolean }) {
   const count = useCountUp(stat.value, 2200, animate);
   return (
     <div className="text-center">
-      <div className="text-5xl font-black text-[#0B2545] tracking-tight">
+      <div className="text-5xl font-black text-white tracking-tight">
         {count}
         <span className="text-[#C8A96E]">{stat.suffix}</span>
       </div>
-      <div className="mt-2 text-sm uppercase tracking-[0.2em] text-gray-500 font-medium">
+      <div className="mt-2 text-sm uppercase tracking-[0.2em] text-blue-200 font-medium">
         {stat.label}
       </div>
     </div>
@@ -162,7 +169,7 @@ function ServiceCard({ service }: { service: Service }) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0B2545] via-[#0B2545]/40 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-          {/* //<div className="text-3xl mb-2">{service.icon}</div> */}
+          <div className="text-3xl mb-2">{service.icon}</div>
           <h3 className="text-xl font-bold text-white">{service.title}</h3>
           <p className="mt-2 text-sm text-blue-100 opacity-0 group-hover:opacity-100 transition-opacity duration-500 leading-relaxed">
             {service.description}

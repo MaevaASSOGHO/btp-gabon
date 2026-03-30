@@ -1,0 +1,58 @@
+timeline histoire 
+``
+  TIMELINE / HISTOIRE
+      ══════════════════════════════════════════ */}
+      <section className="py-28 bg-[#F7F9FC]">
+        <div className="max-w-5xl mx-auto px-6">
+          <AnimatedParagraph>
+            <div className="text-center mb-16">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <div className="w-10 h-0.5 bg-[#C8A96E]" />
+                <span className="text-[#C8A96E] text-sm font-semibold uppercase tracking-[0.25em]">
+                  Notre parcours
+                </span>
+                <div className="w-10 h-0.5 bg-[#C8A96E]" />
+              </div>
+              <h2 className="text-4xl font-black text-[#0B2545]">18 ans d&apos;histoire.</h2>
+            </div>
+          </AnimatedParagraph>
+
+          <div className="relative">
+            {/* Ligne centrale */}
+            <div className="absolute left-1/2 top-0 bottom-0 w-px bg-[#0B2545]/10 -translate-x-1/2" />
+
+            {[
+              { year: "2006", title: "Fondation", desc: "Création d'AKIBA BTP à Libreville avec 12 collaborateurs et un premier contrat de réhabilitation routière." },
+              { year: "2010", title: "Première grande infrastructure", desc: "Livraison du pont de Ntoum, premier ouvrage d'art majeur qui assoit notre réputation nationale." },
+              { year: "2014", title: "Certification ISO 9001", desc: "Obtention de la certification qualité, gage de notre engagement envers l'excellence opérationnelle." },
+              { year: "2018", title: "Expansion nationale", desc: "Ouverture de nos agences à Port-Gentil, Franceville et Oyem pour couvrir l'ensemble du territoire." },
+              { year: "2022", title: "Cap des 200 collaborateurs", desc: "AKIBA BTP franchit le cap symbolique des 200 employés et obtient les certifications ISO 14001 et 45001." },
+              { year: "2024", title: "Vision Afrique Centrale", desc: "Lancement de notre stratégie d'expansion vers les marchés du Congo, du Cameroun et de la RCA." },
+            ].map((item, i) => (
+              <AnimatedParagraph key={item.year} delay={i * 100}>
+                <div className={`flex items-start gap-8 mb-10 ${i % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}>
+                  <div className={`flex-1 ${i % 2 === 0 ? "text-right" : "text-left"}`}>
+                    <div className={`p-6 bg-white rounded-xl border border-gray-100 hover:border-[#C8A96E]/40 hover:shadow-lg transition-all duration-300 inline-block max-w-sm ${i % 2 === 0 ? "ml-auto" : ""}`}>
+                      <div className="text-[#C8A96E] font-black text-xl mb-1">{item.year}</div>
+                      <div className="font-black text-[#0B2545] mb-2">{item.title}</div>
+                      <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                  {/* Dot central */}
+                  <div className="relative flex-none z-10">
+                    <div className="w-4 h-4 rounded-full bg-[#C8A96E] border-4 border-white shadow-md mt-6" />
+                  </div>
+                  <div className="flex-1" />
+                </div>
+              </AnimatedParagraph>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+            <div className="flex items-center justify-center gap-3 mb-5">
+              <div className="w-10 h-0.5 bg-[#C8A96E]" />
+              <span className="text-[#C8A96E] text-sm font-semibold uppercase tracking-[0.3em]">AKIBA BTP · Gabon</span>
+              <div className="w-10 h-0.5 bg-[#C8A96E]" />
+            </div>
